@@ -59,7 +59,7 @@ const textNodes = [
     { id: 9, text: 'While running from your owner it becomes clear they want to play hide and seek.', //from id 7
     options: [
         { text: 'Get away to hide', nextText: 10 },
-        { text: 'You get caught before you can hide', nextText: 2 } ] },
+        { text: 'You get caught before you can hide', nextText: 5 } ] },
 
     { id: 10, text: 'Where do you want to hide from your owner?', //from id 9
     options: [
@@ -71,7 +71,7 @@ const textNodes = [
     options: [
         { text: 'Watch a movie', nextText: 12 } ] },
     
-    { id: 12, text: 'You watch a movie, finish your bag of raw meat, and start to get tired.', //from id 11
+    { id: 12, text: 'You watch \'Ferrets Bride\', finish your bag of raw meat, and start to get tired.', //from id 11
     options: [
         { text: 'You become bored', nextText: 25 } ] },
 
@@ -122,7 +122,7 @@ const textNodes = [
 
     { id: 23, text: 'The cage turns out to be housing a guinea pig that you run around and play with, unitl you accidently bite them and get in trouble.', //from id 22
     options: [
-        { text: 'You go downstairs and become bored', nextText: 23 } ] },
+        { text: 'You go downstairs and become bored', nextText: 25 } ] },
 
     { id: 24, text: 'You walk into the room and sniff anything new you can find, after lots of sniffing you get caught and run downstairs.', //from id 22
     options: [
@@ -184,7 +184,7 @@ const textNodes = [
     options: [
         { text: 'You become bored after all that work', nextText: 47 } ] },
 
-    { id: 37, text: 'What do you want to do with your brothers', // from id 8
+    { id: 37, text: 'What do you want to do with your brothers?', // from id 8
     options: [
         { text: 'Have a dance party', nextText: 40 },
         { text: 'Eat an egg', nextText: 39 },
@@ -194,7 +194,7 @@ const textNodes = [
     options: [
         { text: 'You become bored after playing', nextText: 47 } ] },
 
-    { id: 39, text: 'You go grab and egg from the kitche, and the three of you go ham on it. *nom nom nom* After licking the bowl clean and stashing it you get lots of energy from the egg.', // from id 37
+    { id: 39, text: 'You go grab and egg from the kitchen, and the three of you go ham on it. *nom nom nom* After licking the bowl clean and stashing it you get lots of energy from the egg.', // from id 37
     options: [
         { text: 'Play hide and seek to let out your energy', nextText: 41 } ] },
     
@@ -207,7 +207,7 @@ const textNodes = [
         { text: 'The seeker', nextText: 42 },
         { text: 'The hider', nextText: 44 } ] },
     
-    { id: 42, text: 'You look around and find Pabu under the cage. You find THor hiding under the desk.', // from id 41
+    { id: 42, text: 'You look around and find Pabu under the cage. You find Thor hiding under the desk.', // from id 41
     options: [
         { text: 'End hide and seek game', nextText: 43 } ] },
 
