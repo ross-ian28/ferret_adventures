@@ -31,21 +31,27 @@ const textNodes = [
             { text: 'Loki', nextText: 2 },
             { text: 'Thor', nextText: 3 },
             { text: 'Pabu', nextText: 4 } ] },
-    { id: 2, text: 'You picked Loki! The cage is open, where do you want to go next?',
+    { id: 2, text: 'You picked Loki! The cage is open, where do you want to go next?', // from id 1
         options: [
             { text: 'Leave the cage', nextText: 5 },
             { text: 'Stay in the cage', nextText: 6 } ] },
-    { id: 5, text: 'You leave the cage, where do you want to explore next?',
+    { id: 5, text: 'You leave the cage, where do you want to explore next?', // from id 2
         options: [
             { text: 'Explore the house', nextText: 7 },
             { text: 'Explore the bedroom', nextText: 8 } ] },
-    { id: 6, text: 'You leave the cage, why would you miss out on an adventure. Where do you want to explore next?',
+    { id: 6, text: 'You leave the cage, why would you miss out on an adventure. Where do you want to explore next?', // from id 2
         options: [
             { text: 'Explore the house', nextText: 7 },
             { text: 'Explore the bedroom', nextText: 8 } ] },
+    { id: 7, text: 'You run down the hallway', //from ids 5 and 6
+        options: [
+            { text: '', nextText:  },
+            { text: '', nextText:  },
+            { text: '', nextText:  } ] },
+
     { id: 7, text: 'You leave the cage, why would you miss out on an adventure. Where do you want to explore next?',
-        options: [
-            { text: 'Explore the house', nextText: 7 },
-            { text: 'Explore the bedroom', nextText: 8 } ] },
+    options: [
+        { text: 'Explore the house', nextText: 7 },
+        { text: 'Explore the bedroom', nextText: 8 } ] },
 ]
 startGame()
