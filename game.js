@@ -29,13 +29,18 @@ const textNodes = [
     { id: 1, text: 'Welcome to ferret adventures, select a ferret',
         options: [
             { text: 'Loki', nextText: 2 },
-            { text: 'Thor', nextText: 3 },
-            { text: 'Coming soon...', nextText: 4 } ] },
+            { text: 'Coming soon...', nextText: 1 }, // to 3
+            { text: 'Coming soon...', nextText: 1 } ] }, // to 4
 
     { id: 2, text: 'You picked Loki! The cage is open, where do you want to go next?', // from id 1
         options: [
             { text: 'Leave the cage', nextText: 5 },
             { text: 'Stay in the cage', nextText: 6 } ] },
+
+    { id: 2, text: 'You picked Thor! The cage is open, where do you want to go next?', // from id 1
+    options: [
+        { text: 'Leave', nextText: 48 },
+        { text: 'Stay', nextText: 49 } ] },
 
     { id: 5, text: 'You leave the cage, where do you want to explore next?', // from id 2
         options: [
