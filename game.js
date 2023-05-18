@@ -37,7 +37,7 @@ const textNodes = [
             { text: 'Leave the cage', nextText: 5 },
             { text: 'Stay in the cage', nextText: 6 } ] },
 
-    { id: 2, text: 'You picked Thor! The cage is open, where do you want to go next?', // from id 1
+    { id: 3, text: 'You picked Thor! The cage is open, where do you want to go next?', // from id 1
     options: [
         { text: 'Leave', nextText: 48 },
         { text: 'Stay', nextText: 49 } ] },
