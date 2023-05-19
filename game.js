@@ -1,6 +1,9 @@
 // Grab the two div tag defined in index.html
 const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons')
+let facemaskOption = '';
+let podcastOption = '';
+let tvOption = '';
 function startGame() {
     showTextNode(1);
 }
@@ -24,7 +27,15 @@ function selectOption(option) {
     if (nextTextNodeId <= 0) {
         return startGame();
     }
+    facemaskOption = option.mask || facemaskOption;
+    podcastOption = option.podcast || podcastOption;
+    tvOption = option.tv || tvOption;
     showTextNode(nextTextNodeId); }
+function replacePlaceholders(text) {
+    return text.replace('{facemask}', facemaskOption)
+                .replace('{podcast}', podcastOption)
+                .replace('{tv}', tvOption);
+    }
 const textNodes = [
     { id: 1, text: 'Welcome to ferret adventures, select a ferret',
         options: [
@@ -39,8 +50,8 @@ const textNodes = [
 
     { id: 3, text: 'You picked Thor! The cage is open, where do you want to go next?', // from id 1
     options: [
-        { text: 'Leave', nextText: 48 },
-        { text: 'Stay', nextText: 49 } ] },
+        { text: 'Leave the cage', nextText: 48 },
+        { text: 'Stay in the cage', nextText: 49 } ] },
 
     { id: 5, text: 'You leave the cage, where do you want to explore next?', // from id 2
         options: [
@@ -238,7 +249,7 @@ const textNodes = [
         { text: 'Explore outside the bedroom', nextText: 7 },
         { text: 'Start over', nextText: -1 } ] },
 
-    { id: 48, text: 'leave', // from id 3
+    { id: 48, text: 'Are you sure you want to leave? You are not sure if you are allowed to', // from id 3
     options: [
         { text: 'stay', nextText: 49 },
         { text: 'leave2', nextText: 50 } ] },
@@ -322,5 +333,79 @@ const textNodes = [
     { id: 65, text: 'piggie', // from id 62
     options: [
         { text: 'start over', nextText: -1 } ] },
+
+    { id: 66, text: 'spa', // from id 50
+    options: [
+        { text: 'bath', nextText: 67 },
+        { text: 'nap', nextText: 76 },
+        { text: 'facemask', nextText: 77 } ] },
+
+    { id: 67, text: 'bath', // from id 66
+    options: [
+        { text: 'shampoo', nextText: 68 },
+        { text: 'soak', nextText: 69 } ] },
+
+    { id: 68, text: 'shampoo', // from id 67
+    options: [
+        { text: 'clean', nextText: 70 } ] },
+
+    { id: 69, text: 'soak', // from id 67
+    options: [
+        { text: 'clean', nextText: 70 } ] },
+
+    { id: 70, text: 'clean', // from id 69
+    options: [
+        { text: 'wet', nextText: 71 },
+        { text: 'dry', nextText: 74 } ] },
+
+    { id: 71, text: 'wet', // from id 70
+    options: [
+        { text: 'tunnels', nextText: 72 },
+        { text: 'foot massage', nextText: 73 } ] },
+
+    { id: 72, text: 'tunnels', // from id 71
+    options: [
+        { text: 'dayend', nextText: 83 } ] },
+
+    
+    { id: 73, text: 'foot massage', // from ids 71 and 74
+    options: [
+        { text: 'dayend', nextText: 83 } ] },
+
+    { id: 74, text: 'dry', // from id 70
+    options: [
+        { text: 'egg', nextText: 75 },
+        { text: 'foot massage', nextText: 73 } ] },
+
+    { id: 75, text: 'egg', // from id 74
+    options: [
+        { text: 'dayend', nextText: 83 } ] },
+
+    { id: 76, text: 'nap', // from id 66
+    options: [
+        { text: 'bath', nextText: 67 },
+        { text: 'start over', nextText: -1 } ] },
+
+    { id: 77, text: 'facemask', // from id 66
+    options: [
+        { text: 'sheet mask', mask: 'sheet mask', nextText: 78 },
+        { text: 'charcoal mask', mask: 'charcoal mask', nextText: 78 } ] },
+
+    { id: 78, text: 'podcast', // from id 77
+    options: [
+        { text: '10 steps to do a better war dance', mask: 'facemask.mask', podcast: '10 steps to do a better war dance', nextText: 79 },
+        { text: 'Acient Wardances', mask: 'facemask.mask', podcast: 'Acient Wardances', nextText: 79 },
+        { text: 'Techniques to Trick your Hooman', mask: 'facemask.mask', podcast: 'Techniques to Trick your Hooman', nextText: 79 } ] },
+
+    { id: 79, text: 'tv', // from id 78
+    options: [
+        { text: 'Friends', mask: 'facemask.mask', podcast: 'podcast.podcast', tv: 'Friends', nextText: 80 },
+        { text: 'The Office', mask: 'facemask.mask', podcast: 'podcast.podcast', tv: 'The Office', nextText: 80 },
+        { text: 'Seinfeld', mask: 'facemask.mask', podcast: 'podcast.podcast', tv: 'Seinfeld', nextText: 80 } ] },
+
+    { id: 80, text: `You wear a ${facemask}, while listening to ${podcast} with your eyes closed. After washing your face you turn on ${tv} and relax for a few hours.`, // from id 79
+    options: [
+        { text: 'journal', nextText: 81 },
+        { text: 'checkin', nextText: 82 } ] },
 ]
 startGame()
