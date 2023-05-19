@@ -403,7 +403,7 @@ const textNodes = [
         { text: 'The Office', mask: 'facemask.mask', podcast: 'podcast.podcast', tv: 'The Office', nextText: 80 },
         { text: 'Seinfeld', mask: 'facemask.mask', podcast: 'podcast.podcast', tv: 'Seinfeld', nextText: 80 } ] },
 
-    { id: 80, text: `You wear a ${facemask}, while listening to ${podcast} with your eyes closed. After washing your face you turn on ${tv} and relax for a few hours.`, // from id 79
+    { id: 80, text: `You wear a {facemask}, while listening to {podcast} with your eyes closed. After washing your face you turn on {tv} and relax for a few hours.`, // from id 79
     options: [
         { text: 'journal', nextText: 81 },
         { text: 'checkin', nextText: 82 } ] },
