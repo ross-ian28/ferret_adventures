@@ -5,9 +5,11 @@ let facemaskOption = '';
 let podcastOption = '';
 let tvOption = '';
 function startGame() {
+    //when game started, show the first text
     showTextNode(1);
 }
 function showTextNode(textNodeIndex) {
+    //find the text and options with the coresponding id
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
     textElement.innerText = textNode.text;
     while (optionButtonsElement.firstChild) {
@@ -32,9 +34,10 @@ function selectOption(option) {
     tvOption = option.tv || tvOption;
     showTextNode(nextTextNodeId); }
 function replacePlaceholders(text) {
-    return text.replace('{facemask}', facemaskOption)
-                .replace('{podcast}', podcastOption)
-                .replace('{tv}', tvOption);
+    return text
+    .replace('{facemask}', facemaskOption)
+    .replace('{podcast}', podcastOption)
+    .replace('{tv}', tvOption);
     }
 const textNodes = [
     { id: 1, text: 'Welcome to ferret adventures, select a ferret',
