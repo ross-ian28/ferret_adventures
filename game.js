@@ -40,7 +40,7 @@ const textNodes = [
     { id: 1, text: 'Welcome to ferret adventures, select a ferret',
         options: [
             { text: 'Loki', nextText: 2 },
-            { text: 'Coming soon...', nextText: 1 }, // to 3
+            { text: 'Thor', nextText: 3 },
             { text: 'Coming soon...', nextText: 1 } ] }, // to 4
 
     { id: 2, text: 'You picked Loki! The cage is open, where do you want to go next?', // from id 1
