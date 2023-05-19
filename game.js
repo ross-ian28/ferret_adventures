@@ -1,19 +1,20 @@
-// Grab the two div tag defined in index.html
 const textElement = document.getElementById('text')
-const optionButtonsElement = document.getElementById('option-buttons')
+const optionButtonsElement = document.getElementById('option-buttons') // Select the two div tag defined in index.html
+
 let facemaskOption = '';
 let podcastOption = '';
-let tvOption = '';
+let tvOption = ''; // Set textNode id: 80 placeholder variables
+
 function startGame() {
-    //when game started, show the first text
-    showTextNode(1);
+    showTextNode(1);// When game started, show the first textNode
 }
+
 function showTextNode(textNodeIndex) {
-    //find the text and options with the coresponding id
-    const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
-    textElement.innerText = textNode.text;
+    const textNode = textNodes.find(textNode => textNode.id === textNodeIndex); // Find the text and options with the coresponding id
+    const updatedText = replacePlaceholders(textNode.text); // Call replacePlaceholders for textNode id: 80
+    textElement.innerText = updatedText;
     while (optionButtonsElement.firstChild) {
-        optionButtonsElement.removeChild(optionButtonsElement.firstChild);
+        optionButtonsElement.removeChild(optionButtonsElement.firstChild);// Remove every old option
     }
     textNode.options.forEach(option => {
         if (showOption(option)) {
@@ -21,24 +22,42 @@ function showTextNode(textNodeIndex) {
             button.innerText = option.text;
             button.classList.add('btn');
             button.addEventListener('click', () => selectOption(option));
-            optionButtonsElement.appendChild(button); } }) }
+            optionButtonsElement.appendChild(button); 
+        } 
+    }); 
+}
+
 function showOption(option) {
-    return option.requiredState == null || option.requiredState(); }
+    return option.requiredState == null || option.requiredState(); 
+}
+
 function selectOption(option) {
     const nextTextNodeId = option.nextText;
     if (nextTextNodeId <= 0) {
-        return startGame();
+        return startGame(); // Start the game over if any number less than 0 is returned
     }
-    facemaskOption = option.mask || facemaskOption;
-    podcastOption = option.podcast || podcastOption;
-    tvOption = option.tv || tvOption;
-    showTextNode(nextTextNodeId); }
-function replacePlaceholders(text) {
+    // Conditionals for textNode id: 80
+    if (option.mask) {
+        facemaskOption = option.mask
+    }
+
+    if (option.podcast) {
+        podcastOption = option.podcast;
+    }
+
+    if (option.tv) {
+        tvOption = option.tv;
+    }
+    showTextNode(nextTextNodeId); 
+}
+
+function replacePlaceholders(text) { // Use replace method to change placeholder based on user input
     return text
-    .replace('{facemask}', facemaskOption)
-    .replace('{podcast}', podcastOption)
-    .replace('{tv}', tvOption);
-    }
+        .replace('{facemask}', facemaskOption)
+        .replace('{podcast}', podcastOption)
+        .replace('{tv}', tvOption);
+}
+
 const textNodes = [
     { id: 1, text: 'Welcome to ferret adventures, select a ferret',
         options: [
@@ -254,10 +273,10 @@ const textNodes = [
 
     { id: 48, text: 'Are you sure you want to leave? You are not sure if you are allowed to', // from id 3
     options: [
-        { text: 'stay', nextText: 49 },
-        { text: 'leave2', nextText: 50 } ] },
+        { text: 'Your\'re sure you want to leave', nextText: 50 },
+        { text: 'Stay in the cage', nextText: 49 } ] },
     
-    { id: 49, text: 'stay', // from id 48
+    { id: 49, text: 'You stay, eat your kibble, splash in your water fountain, and take a nap for the rest of the day', // from id 48
     options: [
         { text: 'start over', nextText: -1 } ] },
 
@@ -396,19 +415,31 @@ const textNodes = [
 
     { id: 78, text: 'podcast', // from id 77
     options: [
-        { text: '10 steps to do a better war dance', mask: 'facemask.mask', podcast: '10 steps to do a better war dance', nextText: 79 },
-        { text: 'Acient Wardances', mask: 'facemask.mask', podcast: 'Acient Wardances', nextText: 79 },
-        { text: 'Techniques to Trick your Hooman', mask: 'facemask.mask', podcast: 'Techniques to Trick your Hooman', nextText: 79 } ] },
+        { text: '10 steps to do a better war dance', podcast: '10 steps to do a better war dance', nextText: 79 },
+        { text: 'Acient Wardances', podcast: 'Acient Wardances', nextText: 79 },
+        { text: 'Techniques to Trick your Hooman', podcast: 'Techniques to Trick your Hooman', nextText: 79 } ] },
 
     { id: 79, text: 'tv', // from id 78
     options: [
-        { text: 'Friends', mask: 'facemask.mask', podcast: 'podcast.podcast', tv: 'Friends', nextText: 80 },
-        { text: 'The Office', mask: 'facemask.mask', podcast: 'podcast.podcast', tv: 'The Office', nextText: 80 },
-        { text: 'Seinfeld', mask: 'facemask.mask', podcast: 'podcast.podcast', tv: 'Seinfeld', nextText: 80 } ] },
+        { text: 'Friends', tv: 'Friends', nextText: 80 },
+        { text: 'The Office', tv: 'The Office', nextText: 80 },
+        { text: 'Seinfeld', tv: 'Seinfeld', nextText: 80 } ] },
 
     { id: 80, text: `You wear a {facemask}, while listening to {podcast} with your eyes closed. After washing your face you turn on {tv} and relax for a few hours.`, // from id 79
     options: [
         { text: 'journal', nextText: 81 },
         { text: 'checkin', nextText: 82 } ] },
+
+    { id: 81, text: 'journal', // from id 80
+    options: [
+        { text: 'dayend', nextText: 83 } ] },
+
+    { id: 82, text: 'checkin', // from id 80
+    options: [
+        { text: 'dayend', nextText: 83 } ] },
+
+    { id: 83, text: 'dayend', // from ids 72, 73, 75, 81, and 82
+    options: [
+        { text: 'start over', nextText: -1 } ] },
 ]
 startGame()
