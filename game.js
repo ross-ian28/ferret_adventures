@@ -1,21 +1,16 @@
 const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons') // Select the two div tag defined in index.html
-
 let facemaskOption = '';
 let podcastOption = '';
 let tvOption = ''; // Set textNode id: 80 placeholder variables
-
 function startGame() {
-    showTextNode(1);// When game started, show the first textNode
-}
-
+    showTextNode(1); }// When game started, show the first textNode
 function showTextNode(textNodeIndex) {
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex); // Find the text and options with the coresponding id
     const updatedText = replacePlaceholders(textNode.text); // Call replacePlaceholders for textNode id: 80
     textElement.innerText = updatedText;
     while (optionButtonsElement.firstChild) {
-        optionButtonsElement.removeChild(optionButtonsElement.firstChild);// Remove every old option
-    }
+        optionButtonsElement.removeChild(optionButtonsElement.firstChild); }// Remove every old option
     textNode.options.forEach(option => {
         if (showOption(option)) {
             const button = document.createElement('button');
@@ -23,40 +18,29 @@ function showTextNode(textNodeIndex) {
             button.classList.add('btn');
             button.addEventListener('click', () => selectOption(option));
             optionButtonsElement.appendChild(button); 
-        } 
-    }); 
-}
+        } }); }
 
 function showOption(option) {
-    return option.requiredState == null || option.requiredState(); 
-}
+    return option.requiredState == null || option.requiredState(); }
 
 function selectOption(option) {
     const nextTextNodeId = option.nextText;
     if (nextTextNodeId <= 0) {
-        return startGame(); // Start the game over if any number less than 0 is returned
-    }
+        return startGame(); }// Start the game over if any number less than 0 is returned
     // Conditionals for textNode id: 80
     if (option.mask) {
-        facemaskOption = option.mask
-    }
-
+        facemaskOption = option.mask }
     if (option.podcast) {
-        podcastOption = option.podcast;
-    }
-
+        podcastOption = option.podcast; }
     if (option.tv) {
-        tvOption = option.tv;
-    }
-    showTextNode(nextTextNodeId); 
-}
+        tvOption = option.tv; }
+    showTextNode(nextTextNodeId); }
 
 function replacePlaceholders(text) { // Use replace method to change placeholder based on user input
     return text
         .replace('{facemask}', facemaskOption)
         .replace('{podcast}', podcastOption)
-        .replace('{tv}', tvOption);
-}
+        .replace('{tv}', tvOption); }
 
 const textNodes = [
     { id: 1, text: 'Welcome to ferret adventures, select a ferret',
@@ -269,41 +253,33 @@ const textNodes = [
     { id: 59, text: 'Eventually you reach a pond next to the sidewalk. You decide to go check it out because you\'re super thirsty. When you go down to take a sip, you see some eyes that pop out of the water that scare. You calm down and ', // from id 52
     options: [
         { text: 'fishend', nextText: 60 } ] },
-
     { id: 60, text: 'After splashing around in the pond for a while ', // from id 59
     options: [
         { text: 'Play with someone else', nextText: 52 },
         { text: 'Start over', nextText: -1 } ] },
-
     { id: 61, text: 'hooman', // from id 52
     options: [
         { text: 'outside', nextText: 52 },
         { text: 'Start over', nextText: -1 } ] },
-
     { id: 62, text: 'inside', // from id 51
     options: [
         { text: 'cat', nextText: 63 },
         { text: 'dog', nextText: 64 },
         { text: 'piggie', nextText: 65 } ] },
-
     { id: 63, text: 'cat', // from id 62
     options: [
         { text: 'start over', nextText: -1 } ] },
-
     { id: 64, text: 'dog', // from id 62
     options: [
         { text: 'start over', nextText: -1 } ] },
-
     { id: 65, text: 'piggie', // from id 62
     options: [
         { text: 'start over', nextText: -1 } ] },
-
     { id: 66, text: 'spa', // from id 50
     options: [
         { text: 'bath', nextText: 67 },
         { text: 'nap', nextText: 76 },
         { text: 'facemask', nextText: 77 } ] },
-
     { id: 67, text: 'bath', // from id 66
     options: [
         { text: 'shampoo', nextText: 68 },
