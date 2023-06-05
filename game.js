@@ -261,20 +261,20 @@ const textNodes = [
     options: [
         { text: 'Play with someone else', nextText: 52 },
         { text: 'Start over', nextText: -1 } ] },
-    { id: 62, text: 'inside', // from id 51
+    { id: 62, text: 'You decide to stay inside to make some friends so you wander around the house for a while looking for a new friend', // from id 51
     options: [
-        { text: 'cat', nextText: 63 },
-        { text: 'dog', nextText: 64 },
-        { text: 'piggie', nextText: 65 } ] },
-    { id: 63, text: 'cat', // from id 62
+        { text: 'Make friends with cat', nextText: 63 },
+        { text: 'Make friends with dog', nextText: 64 },
+        { text: 'Make friends with guinea pig', nextText: 65 } ] },
+    { id: 63, text: 'You jump up the stairs with your little legs and find a cat laying down. You lay and chat with them and talk about your favorite types of meat.', // from id 62  
     options: [
-        { text: 'start over', nextText: -1 } ] },
-    { id: 64, text: 'dog', // from id 62
+        { text: 'Start over', nextText: -1 } ] },
+    { id: 64, text: 'You waddle over to the dog and sniff them a bit to make sure you know them. After confirming their legitimacy you curl up into a roll and nap with the dog for a few hours.', // from id 62
     options: [
-        { text: 'start over', nextText: -1 } ] },
-    { id: 65, text: 'piggie', // from id 62
+        { text: 'Start over', nextText: -1 } ] },
+    { id: 65, text: 'You walk over into the living room to find a box making squeaking noises. You open the box and find a guinea pig. You help them out of the box and cook some hot dogs on your little ferret grill. You each eat a hot dog and sit talking, stuffed.', // from id 62
     options: [
-        { text: 'start over', nextText: -1 } ] },
+        { text: 'Start over', nextText: -1 } ] },
     { id: 66, text: 'spa', // from id 50
     options: [
         { text: 'bath', nextText: 67 },
@@ -358,6 +358,6 @@ const textNodes = [
 
     { id: 83, text: 'dayend', // from ids 72, 73, 75, 81, and 82
     options: [
-        { text: 'start over', nextText: -1 } ] },
+        { text: 'Start over', nextText: -1 } ] },
 ]
 startGame()
