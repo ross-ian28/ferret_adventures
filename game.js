@@ -252,14 +252,14 @@ const textNodes = [
         { text: 'Start over', nextText: -1 } ] },
     { id: 59, text: 'Eventually you reach a pond next to the sidewalk. You decide to go check it out because you\'re super thirsty. When you go down to take a sip, you see some eyes that pop out of the water that scare. You calm down and ', // from id 52
     options: [
-        { text: 'fishend', nextText: 60 } ] },
-    { id: 60, text: 'After splashing around in the pond for a while ', // from id 59
+        { text: 'Play with fish', nextText: 60 } ] },
+    { id: 60, text: 'After splashing around in the pond for a while you get out and roll around in the grass to dry yourself off. You then pull out some goldfish from your pocket and talk about your favorite foods with the fish for the rest of the hour.', // from id 59
     options: [
         { text: 'Play with someone else', nextText: 52 },
         { text: 'Start over', nextText: -1 } ] },
-    { id: 61, text: 'hooman', // from id 52
+    { id: 61, text: 'You see a hooman walking down the sidewalk towards you, you walk up next to them and match their pace. Wanting to be polite you ask them how their day is going, they look at you weird and walk faster leaving you behind :(', // from id 52
     options: [
-        { text: 'outside', nextText: 52 },
+        { text: 'Play with someone else', nextText: 52 },
         { text: 'Start over', nextText: -1 } ] },
     { id: 62, text: 'inside', // from id 51
     options: [
