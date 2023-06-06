@@ -261,11 +261,11 @@ const textNodes = [
     options: [
         { text: 'Play with someone else', nextText: 52 },
         { text: 'Start over', nextText: -1 } ] },
-    { id: 62, text: 'You decide to stay inside to make some friends so you wander around the house for a while looking for a new friend', // from id 51
+    { id: 62, text: 'You decide to stay inside to make some friends so you wander around the house for a while looking for a new friend, what animal friend do you bump into?', // from id 51
     options: [
-        { text: 'Make friends with cat', nextText: 63 },
-        { text: 'Make friends with dog', nextText: 64 },
-        { text: 'Make friends with guinea pig', nextText: 65 } ] },
+        { text: 'Cat', nextText: 63 },
+        { text: 'Dog', nextText: 64 },
+        { text: 'Guinea Pig', nextText: 65 } ] },
     { id: 63, text: 'You jump up the stairs with your little legs and find a cat laying down. You lay and chat with them and talk about your favorite types of meat.', // from id 62  
     options: [
         { text: 'Start over', nextText: -1 } ] },
@@ -275,42 +275,42 @@ const textNodes = [
     { id: 65, text: 'You walk over into the living room to find a box making squeaking noises. You open the box and find a guinea pig. You help them out of the box and cook some hot dogs on your little ferret grill. You each eat a hot dog and sit talking, stuffed.', // from id 62
     options: [
         { text: 'Start over', nextText: -1 } ] },
-    { id: 66, text: 'spa', // from id 50
+    { id: 66, text: 'It\'s been a very stressful week for you trying to splash all the water out of the water bowl, so you have a relaxing spa day. What activity do you choose?', // from id 50
     options: [
-        { text: 'bath', nextText: 67 },
-        { text: 'nap', nextText: 76 },
-        { text: 'facemask', nextText: 77 } ] },
-    { id: 67, text: 'bath', // from id 66
+        { text: 'A bath', nextText: 67 },
+        { text: 'A nap', nextText: 76 },
+        { text: 'A facemask', nextText: 77 } ] },
+    { id: 67, text: 'You turn on the faucet on your mini ferret bathtub, after the water heats up to the right temperature you dip your paws into the bathtub. How do you clean yourself?', // from id 66
     options: [
-        { text: 'shampoo', nextText: 68 },
-        { text: 'soak', nextText: 69 } ] },
+        { text: 'Use shampoo', nextText: 68 },
+        { text: 'Soak in water', nextText: 69 } ] },
 
-    { id: 68, text: 'shampoo', // from id 67
+    { id: 68, text: 'You push down on the shampoo bottle and quickly duck under it to get a bunch of shampoo on your head. You then scrub yourself clean and rinse yourself off in the water. How do you dry yourself off?', // from id 67
     options: [
-        { text: 'clean', nextText: 70 } ] },
+        { text: 'Get dried', nextText: 70 } ] },
 
-    { id: 69, text: 'soak', // from id 67
+    { id: 69, text: 'You soak in the water for 45 minutes, in a moment of serenity, before waking up and realizing that you fell asleep.', // from id 67
     options: [
-        { text: 'clean', nextText: 70 } ] },
+        { text: 'Get dried', nextText: 70 } ] },
 
-    { id: 70, text: 'clean', // from id 69
+    { id: 70, text: 'How would you like to dry yourself?', // from id 69
     options: [
-        { text: 'wet', nextText: 71 },
-        { text: 'dry', nextText: 74 } ] },
+        { text: 'Run around wet', nextText: 71 },
+        { text: 'Dry off on towel', nextText: 74 } ] },
 
-    { id: 71, text: 'wet', // from id 70
+    { id: 71, text: 'You get out of the bathtub and decide that drying off can wait as you want to run around. You play and jump around the bathroom for so long you eventually dry out natrually. What activity should you try next?', // from id 70
     options: [
-        { text: 'tunnels', nextText: 72 },
-        { text: 'foot massage', nextText: 73 } ] },
+        { text: 'Play with toys', nextText: 72 },
+        { text: 'Get a massage', nextText: 73 } ] },
 
     { id: 72, text: 'tunnels', // from id 71
     options: [
-        { text: 'dayend', nextText: 83 } ] },
+        { text: 'Dayends', nextText: 83 } ] },
 
     
     { id: 73, text: 'foot massage', // from ids 71 and 74
     options: [
-        { text: 'dayend', nextText: 83 } ] },
+        { text: 'Dayends', nextText: 83 } ] },
 
     { id: 74, text: 'dry', // from id 70
     options: [
@@ -319,7 +319,7 @@ const textNodes = [
 
     { id: 75, text: 'egg', // from id 74
     options: [
-        { text: 'dayend', nextText: 83 } ] },
+        { text: 'Dayends', nextText: 83 } ] },
 
     { id: 76, text: 'nap', // from id 66
     options: [
@@ -350,11 +350,11 @@ const textNodes = [
 
     { id: 81, text: 'journal', // from id 80
     options: [
-        { text: 'dayend', nextText: 83 } ] },
+        { text: 'Dayends', nextText: 83 } ] },
 
     { id: 82, text: 'checkin', // from id 80
     options: [
-        { text: 'dayend', nextText: 83 } ] },
+        { text: 'Dayends', nextText: 83 } ] },
 
     { id: 83, text: 'dayend', // from ids 72, 73, 75, 81, and 82
     options: [
