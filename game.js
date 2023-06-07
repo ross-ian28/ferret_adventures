@@ -233,7 +233,7 @@ const textNodes = [
     options: [
         { text: 'Hug the bird', nextText: 54 },
         { text: 'Play with the bird', nextText: 55 } ] },
-    { id: 54, text: 'You carefully stand on your back legs and hug the bird gently so your claws don\'t scratch them at all', // from id 53
+    { id: 54, text: 'You carefully stand on your back legs and hug the bird gently so your claws don\'t scratch them at all.', // from id 53
     options: [
         { text: 'Finish playing with the bird', nextText: 56 } ] },
     { id: 55, text: 'You run around jumping up at the bird playing chase and dooking your heart out, with the occasional speed bump for resting of course.', // from id 53
@@ -250,7 +250,7 @@ const textNodes = [
     options: [
         { text: 'Play with someone else', nextText: 52 },
         { text: 'Start over', nextText: -1 } ] },
-    { id: 59, text: 'Eventually you reach a pond next to the sidewalk. You decide to go check it out because you\'re super thirsty. When you go down to take a sip, you see some eyes that pop out of the water that scare. You calm down and ', // from id 52
+    { id: 59, text: 'Eventually you reach a pond next to the sidewalk. You decide to go check it out because you\'re super thirsty. When you go down to take a sip, you see some eyes that pop out of the water that scare. Once you calm down, you realize its a fish looking at you.', // from id 52
     options: [
         { text: 'Play with fish', nextText: 60 } ] },
     { id: 60, text: 'After splashing around in the pond for a while you get out and roll around in the grass to dry yourself off. You then pull out some goldfish from your pocket and talk about your favorite foods with the fish for the rest of the hour.', // from id 59
@@ -279,85 +279,70 @@ const textNodes = [
     options: [
         { text: 'A bath', nextText: 67 },
         { text: 'A nap', nextText: 76 },
-        { text: 'A facemask', nextText: 77 } ] },
+        { text: 'A spa day', nextText: 77 } ] },
     { id: 67, text: 'You turn on the faucet on your mini ferret bathtub, after the water heats up to the right temperature you dip your paws into the bathtub. How do you clean yourself?', // from id 66
     options: [
         { text: 'Use shampoo', nextText: 68 },
         { text: 'Soak in water', nextText: 69 } ] },
-
-    { id: 68, text: 'You push down on the shampoo bottle and quickly duck under it to get a bunch of shampoo on your head. You then scrub yourself clean and rinse yourself off in the water. How do you dry yourself off?', // from id 67
+    { id: 68, text: 'You push down on the shampoo bottle and quickly duck under it to get a bunch of shampoo on your head. You then scrub yourself clean and rinse yourself off in the water.', // from id 67
     options: [
         { text: 'Get dried', nextText: 70 } ] },
-
     { id: 69, text: 'You soak in the water for 45 minutes, in a moment of serenity, before waking up and realizing that you fell asleep.', // from id 67
     options: [
         { text: 'Get dried', nextText: 70 } ] },
-
     { id: 70, text: 'How would you like to dry yourself?', // from id 69
     options: [
         { text: 'Run around wet', nextText: 71 },
         { text: 'Dry off on towel', nextText: 74 } ] },
-
     { id: 71, text: 'You get out of the bathtub and decide that drying off can wait as you want to run around. You play and jump around the bathroom for so long you eventually dry out natrually. What activity should you try next?', // from id 70
     options: [
         { text: 'Play with toys', nextText: 72 },
         { text: 'Get a massage', nextText: 73 } ] },
-
-    { id: 72, text: 'tunnels', // from id 71
+    { id: 72, text: 'You drag out all of your tunnels and bubble wrap to play in, you continue to hop and run around until you start to speedbump from being so tired', // from id 71
     options: [
         { text: 'Dayends', nextText: 83 } ] },
-
-    
-    { id: 73, text: 'foot massage', // from ids 71 and 74
+    { id: 73, text: 'You bribe your guinea pig roomate to give you a feet massage, in exange for rubbing them they get hot dogs in return. Adding to your relaxing spa day perfectly.', // from ids 71 and 74
     options: [
         { text: 'Dayends', nextText: 83 } ] },
-
-    { id: 74, text: 'dry', // from id 70
+    { id: 74, text: 'You decide you want to be a polite gentleman ferret today and use a towel to roll around and dry off. What next?', // from id 70
     options: [
-        { text: 'egg', nextText: 75 },
-        { text: 'foot massage', nextText: 73 } ] },
-
-    { id: 75, text: 'egg', // from id 74
+        { text: 'Have a snack', nextText: 75 },
+        { text: 'Get a massage', nextText: 73 } ] },
+    { id: 75, text: 'After a tough day of relaxation you head to the kitchen for an egg to close out your day of relaxtion perfectly.', // from id 74
     options: [
         { text: 'Dayends', nextText: 83 } ] },
-
-    { id: 76, text: 'nap', // from id 66
+    { id: 76, text: 'You head upstairs to take a nap in your owners bed, you curl up into a donut and go to sleep for a few hours.', // from id 66
     options: [
-        { text: 'bath', nextText: 67 },
-        { text: 'start over', nextText: -1 } ] },
-
-    { id: 77, text: 'facemask', // from id 66
+        { text: 'Take a bath', nextText: 67 },
+        { text: 'Start over', nextText: -1 } ] },
+    { id: 77, text: 'You think you need a little self care and to spruce your fur up a bit so you decide to do some fur-care and watch tv. What facemask do you want to use', // from id 66
     options: [
         { text: 'sheet mask', mask: 'sheet mask', nextText: 78 },
         { text: 'charcoal mask', mask: 'charcoal mask', nextText: 78 } ] },
-
-    { id: 78, text: 'podcast', // from id 77
+    { id: 78, text: 'Pick a podcast to listen to', // from id 77
     options: [
         { text: '10 steps to do a better war dance', podcast: '10 steps to do a better war dance', nextText: 79 },
         { text: 'Acient Wardances', podcast: 'Acient Wardances', nextText: 79 },
         { text: 'Techniques to Trick your Hooman', podcast: 'Techniques to Trick your Hooman', nextText: 79 } ] },
-
-    { id: 79, text: 'tv', // from id 78
+    { id: 79, text: 'Pick a tv show to watch', // from id 78
     options: [
         { text: 'Friends', tv: 'Friends', nextText: 80 },
         { text: 'The Office', tv: 'The Office', nextText: 80 },
         { text: 'Seinfeld', tv: 'Seinfeld', nextText: 80 } ] },
-
     { id: 80, text: `You wear a {facemask}, while listening to {podcast} with your eyes closed. After washing your face you turn on {tv} and relax for a few hours.`, // from id 79
     options: [
-        { text: 'journal', nextText: 81 },
-        { text: 'checkin', nextText: 82 } ] },
-
-    { id: 81, text: 'journal', // from id 80
+        { text: 'Write in your journal', nextText: 81 },
+        { text: 'Relaxing toy time', nextText: 82 } ] },
+    { id: 81, text: 'You\'ve had a long day and need to rant in your journal.', // from id 80
     options: [
         { text: 'Dayends', nextText: 83 } ] },
 
-    { id: 82, text: 'checkin', // from id 80
+    { id: 82, text: 'You grab a bunch of stuffies, bubble wrap, tunnels, and boxes to play in with your sibling, Pabu and Loki. The three of you chase each other and bounce around until you start to speedbump from being so tired.', // from id 80
     options: [
         { text: 'Dayends', nextText: 83 } ] },
 
-    { id: 83, text: 'dayend', // from ids 72, 73, 75, 81, and 82
+    { id: 83, text: 'After a really nice relaxing day, you head back into your cage and curl up in a hammock to sleep for the next 12 hours.', // from ids 72, 73, 75, 81, and 82
     options: [
-        { text: 'Start over', nextText: -1 } ] },
+        { text: 'Start over', nextText: -1 } ] }
 ]
 startGame()
