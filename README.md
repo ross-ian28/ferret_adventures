@@ -4,4 +4,4 @@ Ferret Adventures is a choose your own adventure game based on three different f
 Structure and styling inspired by this [tutorial](https://www.youtube.com/watch?v=R1S_NhKkvGA)
 
 ### Live site
-Live site coming soon
+[Live site](https://ferret-adventures.vercel.app/)
