@@ -19,10 +19,8 @@ function showTextNode(textNodeIndex) {
             button.addEventListener('click', () => selectOption(option));
             optionButtonsElement.appendChild(button); 
         } }); }
-
 function showOption(option) {
     return option.requiredState == null || option.requiredState(); }
-
 function selectOption(option) {
     const nextTextNodeId = option.nextText;
     if (nextTextNodeId <= 0) {
@@ -35,13 +33,11 @@ function selectOption(option) {
     if (option.tv) {
         tvOption = option.tv; }
     showTextNode(nextTextNodeId); }
-
 function replacePlaceholders(text) { // Use replace method to change placeholder based on user input
     return text
         .replace('{facemask}', facemaskOption)
         .replace('{podcast}', podcastOption)
         .replace('{tv}', tvOption); }
-
 const textNodes = [
     { id: 1, text: 'Welcome to ferret adventures, select a ferret',
         options: [
